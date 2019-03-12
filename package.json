@@ -1,0 +1,29 @@
+{
+  "name": "kaupunkipyorabot",
+  "version": "0.0.1",
+  "description": "HSL Kaupunkipyörien asemien saatavuus ja tiedot Telegramista",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ainki/kaupunkipyorabot.git"
+  },
+  "author": "ainki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ainki/kaupunkipyorabot/issues"
+  },
+  "homepage": "https://github.com/ainki/kaupunkipyorabot#readme",
+  "dependencies": {
+    "console-stamp": "^0.2.7",
+    "graphql-request": "^1.8.2",
+    "jsonpath": "^1.0.1",
+    "telebot": "^1.2.6"
+  }
+}
