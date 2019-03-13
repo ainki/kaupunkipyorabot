@@ -4,6 +4,8 @@
 // vaatimukset
 const bot = require('./bot')
 const sijainti = require('./lib/functions/sijainti')
+const asema = require('./lib/functions/asema')
+const replyMarkup = require('./lib/flow/nappaimisto')
 
 // npm
 require('console-stamp')(console, 'HH:MM:ss'); //Aikaleimat logiin
@@ -17,7 +19,7 @@ bot.on('text', function (msg) {
 
 bot.on('/start', (msg) => {
     // Lähettää viestin ja näppäimistön
-    bot.sendMessage(msg.chat.id, `Hei, ${msg.from.first_name}! Tervetuloa käyttäämään kaupunkipyöräbottia.`)
+    bot.sendMessage(msg.chat.id, `Hei, ${msg.from.first_name}! Tervetuloa käyttäämään kaupunkipyöräbottia.`, { replyMarkup })
     return console.log('[info]  Start viesti lähetetty.')
 })
 
@@ -27,6 +29,12 @@ bot.on('/help', (msg) => {
     return console.log("[info]  Help viesti lähetetty.")
 });
 
+bot.on('/asema', msg => {
+    return asema(msg.chat.id, msg.text);
+})
+
 bot.on(['location'], (msg, self) => {
     return sijainti(msg.chat.id, msg.location);
 });
+
+bot.start();
