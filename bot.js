@@ -1,6 +1,6 @@
 //
 //  Kaupunkipyorabot
-//  Made by ainki
+//  Made by ainki & larma
 //
 
 //NPM

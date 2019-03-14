@@ -19,13 +19,13 @@ bot.on('text',  (msg) => {
 
 bot.on('/start', (msg) => {
     // Lähettää viestin ja näppäimistön
-    bot.sendMessage(msg.chat.id, `Hei, ${msg.from.first_name}! Lähetä minulle aseman koodi tai sijaintisi, niin saat pyöräasemien tilan.\n\n/asema - etsi aseman koodin mukaan\n/help - lisäohjeita\n/about - tietoa`, { replyMarkup })
+    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}! Tervetuloa käyttämään Kaupunkipyöräbottia.\n\nVoit etsiä asemia tekemällä /asema ja antamalla aseman koodin. Saat aseman tiedot ja sijainnin.\n\nVoit myös lähettää sijaintisi ja saat lähimpien kaupunkipyöräasemien tiedot.\n\nTutustu kaupunkipyöriin osoitteessa kaupunkipyorat.hsl.fi.\n\nNähdään baanalla! 🚲`, { replyMarkup })
     return console.log('[info]  Start viesti lähetetty.')
 });
 
 bot.on('/help', (msg) => {
     // Lähettää viestin
-    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä saa lisätietoa!\n\nKomennot:\n\n/asema - Etsi asemia nimen tai koodin mukaan.`);
+    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy lisäohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin mukaan.`);
     return console.log("[info]  Help viesti lähetetty.")
 });
 
