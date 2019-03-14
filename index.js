@@ -11,7 +11,7 @@ const replyMarkup = require('./lib/flow/nappaimisto')
 require('console-stamp')(console, 'HH:MM:ss'); //Aikaleimat logiin
 
 // viestien logaus konsoliin
-bot.on('text', function (msg) {
+bot.on('text',  (msg) => {
     console.log(`[text]  ${msg.chat.id}: ${msg.text}`);
 });
 
@@ -21,7 +21,7 @@ bot.on('/start', (msg) => {
     // Lähettää viestin ja näppäimistön
     bot.sendMessage(msg.chat.id, `Hei, ${msg.from.first_name}! Lähetä minulle aseman koodi tai sijaintisi, niin saat pyöräasemien tilan.\n\n/asema - etsi aseman koodin mukaan\n/help - lisäohjeita\n/about - tietoa`, { replyMarkup })
     return console.log('[info]  Start viesti lähetetty.')
-})
+});
 
 bot.on('/help', (msg) => {
     // Lähettää viestin
@@ -31,7 +31,7 @@ bot.on('/help', (msg) => {
 
 bot.on('/asema', msg => {
     return asema(msg.chat.id, msg.text);
-})
+});
 
 bot.on(['location'], (msg, self) => {
     return sijainti(msg.chat.id, msg.location);

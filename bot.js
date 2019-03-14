@@ -8,7 +8,7 @@ const TeleBot = require('telebot');
 
 //BotToken
 const bot = new TeleBot({
-    token: 'TOKEN',
+    token: '535551085:AAE_sKOJ_KaR3xMaUiF7yphCYHlHnsz54NM',
     usePlugins: ['askUser', 'floodProtection'],
     pluginConfig: {
         floodProtection: {
