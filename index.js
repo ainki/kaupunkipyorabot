@@ -19,7 +19,7 @@ bot.on('text', function (msg) {
 
 bot.on('/start', (msg) => {
     // Lähettää viestin ja näppäimistön
-    bot.sendMessage(msg.chat.id, `Hei, ${msg.from.first_name}! Tervetuloa käyttäämään kaupunkipyöräbottia.`, { replyMarkup })
+    bot.sendMessage(msg.chat.id, `Hei, ${msg.from.first_name}! Lähetä minulle aseman koodi tai sijaintisi, niin saat pyöräasemien tilan.\n\n/asema - etsi aseman koodin mukaan\n/help - lisäohjeita\n/about - tietoa`, { replyMarkup })
     return console.log('[info]  Start viesti lähetetty.')
 })
 
