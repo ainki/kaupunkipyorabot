@@ -6,16 +6,15 @@ const bot = require('./bot')
 const sijainti = require('./lib/functions/sijainti')
 const asema = require('./lib/functions/asema')
 const replyMarkup = require('./lib/flow/nappaimisto')
-
 // npm
 require('console-stamp')(console, 'HH:MM:ss'); //Aikaleimat logiin
 
 // viestien logaus konsoliin
-bot.on('text',  (msg) => {
+bot.on('text', (msg) => {
     console.log(`[text]  ${msg.chat.id}: ${msg.text}`);
 });
 
-// komennot
+// Komennot
 
 bot.on('/start', (msg) => {
     // Lähettää viestin ja näppäimistön
@@ -25,7 +24,7 @@ bot.on('/start', (msg) => {
 
 bot.on('/help', (msg) => {
     // Lähettää viestin
-    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy lisäohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin mukaan.`);
+    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy ohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin mukaan.`);
     return console.log("[info]  Help viesti lähetetty.")
 });
 
