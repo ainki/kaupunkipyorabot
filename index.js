@@ -24,7 +24,7 @@ bot.on('/start', (msg) => {
 
 bot.on('/help', (msg) => {
     // Lähettää viestin
-    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy ohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin mukaan.`);
+    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy ohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin tai nimen mukaan.`);
     return console.log("[info]  Help viesti lähetetty.")
 });
 
