@@ -1,11 +1,12 @@
 // index.js
 // kaupunkipyorabot
 
-// vaatimukset
+// importit
 const bot = require('./bot')
 const sijainti = require('./lib/functions/sijainti')
-const asema = require('./lib/functions/asema')
+const asemat = require('./lib/functions/asema')
 const replyMarkup = require('./lib/flow/nappaimisto')
+var asemaFunc = asemat.asema;
 // npm
 require('console-stamp')(console, 'HH:MM:ss'); //Aikaleimat logiin
 
@@ -24,12 +25,16 @@ bot.on('/start', (msg) => {
 
 bot.on('/help', (msg) => {
     // Lähettää viestin
-    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy ohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin mukaan.`);
+    bot.sendMessage(msg.chat.id, `Hei ${msg.from.first_name}. Täältä löytyy ohjeita!\n\nKomennot:\n\n/asema - Etsi asemia koodin tai nimen mukaan.`);
     return console.log("[info]  Help viesti lähetetty.")
 });
 
 bot.on('/asema', msg => {
-    return asema(msg.chat.id, msg.text);
+    return asemaFunc(msg.chat.id, msg.text);
+});
+
+bot.on('/as', msg => {
+    return asemaFunc(msg.chat.id, msg.text);
 });
 
 bot.on(['location'], (msg, self) => {
