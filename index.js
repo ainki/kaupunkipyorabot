@@ -33,10 +33,6 @@ bot.on('/asema', msg => {
     return asemaFunc(msg.chat.id, msg.text);
 });
 
-bot.on('/as', msg => {
-    return asemaFunc(msg.chat.id, msg.text);
-});
-
 bot.on(['location'], (msg, self) => {
     return sijainti(msg.chat.id, msg.location);
 });
