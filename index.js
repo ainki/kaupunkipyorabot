@@ -1,7 +1,7 @@
 // index.js
 // kaupunkipyorabot
 
-// vaatimukset
+// importit
 const bot = require('./bot')
 const sijainti = require('./lib/functions/sijainti')
 const asemat = require('./lib/functions/asema')
