@@ -4,9 +4,9 @@
 // importit
 const bot = require('./bot')
 const sijainti = require('./lib/functions/sijainti')
-const asemat = require('./lib/functions/asema')
+const asema = require('./lib/functions/asema')
 const replyMarkup = require('./lib/flow/nappaimisto')
-var asemaFunc = asemat.asema;
+
 // npm
 require('console-stamp')(console, 'HH:MM:ss'); //Aikaleimat logiin
 
@@ -30,7 +30,7 @@ bot.on('/help', (msg) => {
 });
 
 bot.on('/asema', msg => {
-    return asemaFunc(msg.chat.id, msg.text);
+    return asema(msg.chat.id, msg.text);
 });
 
 bot.on(['location'], (msg, self) => {
