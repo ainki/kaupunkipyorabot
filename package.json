@@ -22,6 +22,7 @@
   "homepage": "https://github.com/ainki/kaupunkipyorabot#readme",
   "dependencies": {
     "console-stamp": "^0.2.7",
+    "geolocation-utils": "^1.2.2",
     "graphql-request": "^1.8.2",
     "jsonpath": "^1.0.1",
     "nodemon": "^1.18.10",
