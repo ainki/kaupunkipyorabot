@@ -32,9 +32,23 @@ bot.on('/help', (msg) => {
 bot.on('/asema', msg => {
     return asema(msg.chat.id, msg.text);
 });
+bot.on('/as', msg => {
+    return asema(msg.chat.id, msg.text);
+});
 
 bot.on(['location'], (msg, self) => {
     return sijainti(msg.chat.id, msg.location);
+});
+
+bot.on('*', msg => {
+  if (typeof(msg.text) === "string") {
+    if (msg.text.includes("/") && !msg.text.startsWith("/asema") && !msg.text.startsWith("/as") && !msg.text.startsWith("/help")) {
+      return bot.sendMessage( msg.chat.id,'Virheellinen komento. Komennolla /help saat listan komennoista ', { ask: 'ask/valinta' });
+
+    }
+
+
+}
 });
 
 bot.start();
