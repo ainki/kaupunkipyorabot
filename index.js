@@ -42,7 +42,7 @@ bot.on(['location'], (msg, self) => {
 
 bot.on('*', msg => {
   if (typeof(msg.text) === "string") {
-    if (msg.text.includes("/") && !msg.text.startsWith("/asema") && !msg.text.startsWith("/as") && !msg.text.startsWith("/help")) {
+    if (msg.text.includes("/") && !msg.text.startsWith("/asema") && !msg.text.startsWith("/as") && !msg.text.startsWith("/help" && !msg.text.startsWith("/start")) {
       return bot.sendMessage( msg.chat.id,'Virheellinen komento. Komennolla /help saat listan komennoista ', { ask: 'ask/valinta' });
 
     }
