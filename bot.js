@@ -15,7 +15,7 @@ const bot = new TeleBot({
     usePlugins: ['askUser', 'floodProtection'],
     pluginConfig: {
         floodProtection: {
-            interval: 0.4,
+            interval: 0.3,
             message: 'Ei spämmiä kiitos! 😤'
         }
     }
