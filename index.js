@@ -19,7 +19,7 @@ bot.on('text', (msg) => {
 
 bot.on('/start', (msg) => {
     // Lähettää viestin ja näppäimistön
-    bot.sendMessage(msg.chat.id, `<b>Hei ${msg.from.first_name}!</b> Tervetuloa käyttämään Kaupunkipyöräbottia.\n\n/asema\nEtsi asemaa aseman koodilla tai nimellä. Saat vasteukseksi aseman sijainnin ja reaaliaikaisen tilan.\n\nSijainti 📍\nLähetä sijainti ja saat lähimmät kaupunkipyöräasemat ja niiden tiedot.\n\nTutustu kaupunkipyöriin osoitteessa kaupunkipyorat.hsl.fi.\n<b>Kaupunkipyöräkausi on päättynyt. Uusi kausi alkaa 1.4.2020.</b>\n\nNähdään baanalla! 🚲`, { replyMarkup , parseMode: 'html'})
+    bot.sendMessage(msg.chat.id, `<b>Hei ${msg.from.first_name}!</b> Tervetuloa käyttämään Kaupunkipyöräbottia.\n\n/asema\nEtsi asemaa aseman koodilla tai nimellä. Saat vasteukseksi aseman sijainnin ja reaaliaikaisen tilan.\n\nSijainti 📍\nLähetä sijainti ja saat lähimmät kaupunkipyöräasemat ja niiden tiedot.\n\nTutustu kaupunkipyöriin osoitteessa kaupunkipyorat.hsl.fi.\n\nHSL aikataulut @pysakkibot\n\nNähdään baanalla! 🚲`, { replyMarkup , parseMode: 'html'})
     return console.log('[info]  Start viesti lähetetty.')
 });
 
