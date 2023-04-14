@@ -1,8 +1,8 @@
 {
   "name": "kaupunkipyorabot",
-  "version": "1.0.2",
+  "version": "2.0.0-alpha",
   "description": "HSL Kaupunkipyörien asemien saatavuus ja tiedot Telegramista",
-  "main": "index.js",
+  "main": "./src/app.js",
   "directories": {
     "lib": "lib"
   },
