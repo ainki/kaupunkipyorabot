@@ -1,10 +1,11 @@
 const getCityBikeStations = require('./locationHandler')
 
 async function cityBikeLocation (ctx) {
+  // Lähettää typing actionin
   ctx.sendChatAction(ctx, { action: 'typing' })
-  const userLocation = ctx.message.location
-  // console.log(userLocation.latitude)
-  const vastaus = await getCityBikeStations(userLocation)
+  // Siirtyy getCityBikeStations functioon ja odottaa vastausta
+  const vastaus = await getCityBikeStations(ctx.message.location)
+  // Lähettää käyttäjälle viestin
   ctx.reply(vastaus, { parse_mode: 'HTML' })
   console.info('Asemat lähetetty sijainnin perusteella')
 }
