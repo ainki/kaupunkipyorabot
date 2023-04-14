@@ -1,0 +1,14 @@
+version: '3'
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        token: 
+        digitransitApiKey: 
+    container_name: kaupunkipyorabot
+    image: ainki/kaupunkipyorabot:latest
+    restart: always
+    volumes:
+      - ./data:/app/data
