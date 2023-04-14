@@ -38,7 +38,6 @@ function stationListaus (response) {
   } else {
     // Käydään jokainen asema läpi
     for (let i = 0; i < edges.length; i++) {
-      console.log(edges[i].node.place.networks[0])
       // Jos vantaan asemat otetaan stationId pois koska vantaan stationId:t = nonsense
       if (edges[i].node.place.networks[0] === 'vantaa') {
         // Tarkistaa onko asema käytössä ja rakentaa viestin
