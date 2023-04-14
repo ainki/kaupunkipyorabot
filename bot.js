@@ -2,23 +2,22 @@
 //  Kaupunkipyorabot
 //
 
-//NPM
-const TeleBot = require('telebot');
+// NPM
+const TeleBot = require('telebot')
 
-//Heroku token
-var token = process.env.token;
-// var token = 'TOKEN'  // Lokaaliin pyörittämiseen
+// Bot token
+const token = process.env.token
 
-//BotToken
+// BotToken
 const bot = new TeleBot({
-    token: `${token}`,
-    usePlugins: ['askUser', 'floodProtection'],
-    pluginConfig: {
-        floodProtection: {
-            interval: 0.3,
-            message: 'Ei spämmiä kiitos! 😤'
-        }
+  token: `${token}`,
+  usePlugins: ['askUser', 'floodProtection'],
+  pluginConfig: {
+    floodProtection: {
+      interval: 0.3,
+      message: 'Ei spämmiä kiitos! 😤'
     }
-});
+  }
+})
 
-module.exports = bot;
+module.exports = bot
