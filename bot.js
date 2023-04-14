@@ -4,6 +4,7 @@
 
 // NPM
 const TeleBot = require('telebot')
+require('dotenv').config()
 
 // Bot token
 const token = process.env.token

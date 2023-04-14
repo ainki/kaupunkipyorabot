@@ -1,6 +1,6 @@
 {
   "name": "kaupunkipyorabot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HSL Kaupunkipyörien asemien saatavuus ja tiedot Telegramista",
   "main": "index.js",
   "directories": {
@@ -22,7 +22,9 @@
   "homepage": "https://github.com/ainki/kaupunkipyorabot#readme",
   "dependencies": {
     "console-stamp": "^0.2.7",
+    "dotenv": "^16.0.3",
     "geolocation-utils": "^1.2.2",
+    "graphql": "^16.6.0",
     "graphql-request": "^5.2.0",
     "jsonpath": "^1.0.1",
     "nodemon": "^2.0.4",
