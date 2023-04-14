@@ -1,3 +1,4 @@
+const { Markup } = require('telegraf')
 require('dotenv').config()
 
 // Pääkaupunkiseudun polygon
@@ -15,7 +16,10 @@ const polygon = [
   [60.1251, 24.9431]
 ]
 
+const startKeyboard = Markup.keyboard([['/asema', Markup.button.locationRequest('Sijainti 📍')]]).resize()
+
 module.exports = {
   digitransitApi: 'http://api.digitransit.fi/routing/v1/routers/hsl/index/graphql?digitransit-subscription-key=' + process.env.digitransitApiKey,
-  polygon
+  polygon,
+  startKeyboard
 }

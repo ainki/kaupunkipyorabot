@@ -1,9 +1,10 @@
-const { Telegraf, Scenes, session } = require('telegraf')
+const { Telegraf, Scenes, session, Markup } = require('telegraf')
 require('dotenv').config() // env-tiedoston lukuun
 require('console-stamp')(console, 'HH:MM:ss') // Aikaleimat logiin
 
 const cityBikeLocation = require('./location/index')
 const asemaScene = require('./asema/index')
+const utils = require('./utils')
 
 const bot = new Telegraf(process.env.telegramBotToken)
 
@@ -21,7 +22,7 @@ bot.use((ctx, next) => {
 })
 
 bot.start((ctx) => {
-  ctx.reply(`<b>Hei ${ctx.from.first_name}!</b> Tervetuloa käyttämään Kaupunkipyöräbottia.\n\nOlen versio 2 kehitysversio, joka on vielä kesken.\n\n<b>Ominaisuudet</b>\nSijainti 📍\nLähetä botille sijaintisi ja saat lähimpien asemien tiedot.\n\n<b>Lisätietoa</b>\nTutustu kaupunkipyöriin ja osta kausi osoittesta kaupunkipyorat.hsl.fi.\n\nTestaa myös @pysakkibot!\n\nNähdään baanalla! 🚲`, { parse_mode: 'HTML' })
+  ctx.replyWithHTML(`<b>Hei ${ctx.from.first_name}!</b> Tervetuloa käyttämään Kaupunkipyöräbottia.\n\nOlen versio 2 kehitysversio, joka on vielä kesken.\n\n<b>Ominaisuudet</b>\nSijainti 📍\nLähetä botille sijaintisi ja saat läimpien asemien tiedot.\n\n<b>Lisätietoa</b>\nTutustu kaupunkipyöriin ja osta kausi osoittesta kaupunkipyorat.hsl.fi.\n\nTestaa myös @pysakkibot!\n\nNähdään baanalla! 🚲`, utils.startKeyboard)
   console.info('Start viesti lähetetty')
 })
 
