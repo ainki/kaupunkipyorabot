@@ -24,7 +24,7 @@
     "console-stamp": "^3.1.1",
     "dotenv": "^16.0.3",
     "geolocation-utils": "^1.2.5",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "graphql-request": "^6.0.0",
     "jsonpath": "^1.1.1",
     "telebot": "^1.4.1"
