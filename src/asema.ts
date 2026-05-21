@@ -22,6 +22,7 @@ const getMessageText = (ctx: Context) => {
 };
 
 const handleAsemaCommand = async (ctx: Context) => {
+  ctx.sendChatAction("typing");
   const text = getMessageText(ctx);
   const query = text.replace(/^\/asema(@\w+)?/i, "").trim();
   const chatId = getChatId(ctx) || 0;
@@ -101,6 +102,7 @@ const handleStationSearch = async (ctx: Context, query: string) => {
 };
 
 const handleAsemaSelection = async (ctx: Context) => {
+  ctx.sendChatAction("typing");
   const callbackQuery = ctx.callbackQuery;
   if (!callbackQuery || !("data" in callbackQuery)) {
     return false;
@@ -129,6 +131,7 @@ const handleAsemaSelection = async (ctx: Context) => {
 };
 
 const handlePendingAsemaInput = async (ctx: Context) => {
+  ctx.sendChatAction("typing");
   const chatId = getChatId(ctx) || 0;
 
   if (!pendingAsemaChats.has(chatId)) {
